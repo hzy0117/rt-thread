@@ -51,6 +51,9 @@ static struct ra_pwm ra6m4_pwm_obj[BSP_PWMS_NUM] =
 #ifdef BSP_USING_PWM9
     [BSP_PWM9_INDEX] = PWM_DRV_INITIALIZER(9),
 #endif
+#ifdef BSP_USING_PWM12
+    [BSP_PWM12_INDEX] = PWM_DRV_INITIALIZER(12),
+#endif
 };
 
 #ifdef SOC_SERIES_R9A07G0
