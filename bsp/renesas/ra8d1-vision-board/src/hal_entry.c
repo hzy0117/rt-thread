@@ -9,18 +9,15 @@
  */
 
 #include <rtthread.h>
-#include "hal_data.h"
-#ifdef RT_USING_NANO
-#include <drv_gpio.h>
-#else
 #include <rtdevice.h>
-#endif /* RT_USING_NANO */
-
+#include "hal_data.h"
 #define LED_PIN    BSP_IO_PORT_01_PIN_02 /* Onboard LED pins */
+
 
 void hal_entry(void)
 {
     rt_kprintf("\nHello RT-Thread!\n");
+    //drv_pwm_control();
 
     while (1)
     {

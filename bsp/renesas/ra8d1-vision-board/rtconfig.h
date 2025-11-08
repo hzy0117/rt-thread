@@ -63,7 +63,7 @@
 
 /* end of rt_strnlen options */
 /* end of klibc options */
-#define RT_NAME_MAX 12
+#define RT_NAME_MAX 18
 #define RT_CPUS_NR 1
 #define RT_ALIGN_SIZE 8
 #define RT_THREAD_PRIORITY_32
@@ -151,6 +151,10 @@
 #define RT_USING_SERIAL_V2
 #define RT_SERIAL_BUF_STRATEGY_OVERWRITE
 #define RT_SERIAL_USING_DMA
+#define RT_USING_I2C
+#define RT_USING_PWM
+#define RT_USING_SENSOR
+#define RT_USING_SENSOR_CMD
 #define RT_USING_PIN
 /* end of Device Drivers */
 
@@ -321,10 +325,18 @@
 /* GD32 Drivers */
 
 /* end of GD32 Drivers */
+
+/* HPMicro SDK */
+
+/* end of HPMicro SDK */
 /* end of HAL & SDK Drivers */
 
 /* sensors drivers */
 
+#define PKG_USING_VL53L0X
+#define PKG_VL53L0X_USING_SENSOR_V1
+#define PKG_VL53L0X_USING_SENSOR_V1_SAMPLE
+#define PKG_USING_VL53L0X_LATEST_VERSION
 /* end of sensors drivers */
 
 /* touch drivers */
@@ -416,6 +428,10 @@
 #define BSP_USING_UART9
 #define BSP_UART9_RX_BUFSIZE 256
 #define BSP_UART9_TX_BUFSIZE 0
+#define BSP_USING_HW_I2C
+#define BSP_USING_HW_I2C1
+#define BSP_USING_PWM
+#define BSP_USING_PWM12
 #define BSP_USING_SDRAM
 #define BSP_USING_SDRAM_SIZE 0x2000000
 /* end of On-chip Peripheral Drivers */

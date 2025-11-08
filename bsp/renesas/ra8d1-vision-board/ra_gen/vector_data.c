@@ -9,6 +9,10 @@
             [1] = sci_b_uart_txi_isr, /* SCI9 TXI (Transmit data empty) */
             [2] = sci_b_uart_tei_isr, /* SCI9 TEI (Transmit end) */
             [3] = sci_b_uart_eri_isr, /* SCI9 ERI (Receive error) */
+            [4] = iic_master_rxi_isr, /* IIC1 RXI (Receive data full) */
+            [5] = iic_master_txi_isr, /* IIC1 TXI (Transmit data empty) */
+            [6] = iic_master_tei_isr, /* IIC1 TEI (Transmit end) */
+            [7] = iic_master_eri_isr, /* IIC1 ERI (Transfer error) */
         };
         const bsp_interrupt_event_t g_interrupt_event_link_select[BSP_ICU_VECTOR_MAX_ENTRIES] =
         {
@@ -16,6 +20,10 @@
             [1] = BSP_PRV_IELS_ENUM(EVENT_SCI9_TXI), /* SCI9 TXI (Transmit data empty) */
             [2] = BSP_PRV_IELS_ENUM(EVENT_SCI9_TEI), /* SCI9 TEI (Transmit end) */
             [3] = BSP_PRV_IELS_ENUM(EVENT_SCI9_ERI), /* SCI9 ERI (Receive error) */
+            [4] = BSP_PRV_IELS_ENUM(EVENT_IIC1_RXI), /* IIC1 RXI (Receive data full) */
+            [5] = BSP_PRV_IELS_ENUM(EVENT_IIC1_TXI), /* IIC1 TXI (Transmit data empty) */
+            [6] = BSP_PRV_IELS_ENUM(EVENT_IIC1_TEI), /* IIC1 TEI (Transmit end) */
+            [7] = BSP_PRV_IELS_ENUM(EVENT_IIC1_ERI), /* IIC1 ERI (Transfer error) */
         };
         #elif __has_include("r_ioport_b.h")
         BSP_DONT_REMOVE const fsp_vector_t g_vector_table[BSP_IRQ_VECTOR_MAX_ENTRIES] BSP_PLACE_IN_SECTION(BSP_SECTION_APPLICATION_VECTORS) =
@@ -24,6 +32,10 @@
             [BSP_PRV_IELS_ENUM(SCI9_TXI)] = sci_b_uart_txi_isr, /* SCI9 TXI (Transmit data empty) */
             [BSP_PRV_IELS_ENUM(SCI9_TEI)] = sci_b_uart_tei_isr, /* SCI9 TEI (Transmit end) */
             [BSP_PRV_IELS_ENUM(SCI9_ERI)] = sci_b_uart_eri_isr, /* SCI9 ERI (Receive error) */
+            [BSP_PRV_IELS_ENUM(IIC1_RXI)] = iic_master_rxi_isr, /* IIC1 RXI (Receive data full) */
+            [BSP_PRV_IELS_ENUM(IIC1_TXI)] = iic_master_txi_isr, /* IIC1 TXI (Transmit data empty) */
+            [BSP_PRV_IELS_ENUM(IIC1_TEI)] = iic_master_tei_isr, /* IIC1 TEI (Transmit end) */
+            [BSP_PRV_IELS_ENUM(IIC1_ERI)] = iic_master_eri_isr, /* IIC1 ERI (Transfer error) */
         };
         #endif
         #endif

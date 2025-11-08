@@ -244,6 +244,14 @@
       <description>Board support package for RA8D1 - FSP Data</description>
       <originalPack>Renesas.RA_mcu_ra8d1.5.1.0.pack</originalPack>
     </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_gpt" variant="" vendor="Renesas" version="5.1.0">
+      <description>General PWM Timer</description>
+      <originalPack>Renesas.RA.5.1.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_iic_master" variant="" vendor="Renesas" version="5.1.0">
+      <description>I2C Master Interface</description>
+      <originalPack>Renesas.RA.5.1.0.pack</originalPack>
+    </component>
   </raComponentSelection>
   <raElcConfiguration/>
   <raIcuConfiguration/>
@@ -282,9 +290,73 @@
       <property id="module.driver.uart.tei_ipl" value="board.icu.common.irq.priority12"/>
       <property id="module.driver.uart.eri_ipl" value="board.icu.common.irq.priority12"/>
     </module>
+    <module id="module.driver.timer_on_gpt.1278150442">
+      <property id="module.driver.timer.name" value="g_timer12"/>
+      <property id="module.driver.timer.channel" value="12"/>
+      <property id="module.driver.timer.mode" value="module.driver.timer.mode.mode_pwm"/>
+      <property id="module.driver.timer.period" value="25"/>
+      <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_frequency_khz"/>
+      <property id="module.driver.timer.gtior.gtioa.initial_output_level" value="module.driver.timer.gtior.gtioa.initial_output_level.low"/>
+      <property id="module.driver.timer.gtior.gtioa.cycle_end_output_level" value="module.driver.timer.gtior.gtioa.cycle_end_output_level.retain"/>
+      <property id="module.driver.timer.gtior.gtioa.compare_match_output_level" value="module.driver.timer.gtior.gtioa.compare_match_output_level.retain"/>
+      <property id="module.driver.timer.gtior.gtioa.count_stop_retain" value="module.driver.timer.gtior.gtioa.count_stop_retain.disabled"/>
+      <property id="module.driver.timer.gtior.gtiob.initial_output_level" value="module.driver.timer.gtior.gtiob.initial_output_level.low"/>
+      <property id="module.driver.timer.gtior.gtiob.cycle_end_output_level" value="module.driver.timer.gtior.gtiob.cycle_end_output_level.retain"/>
+      <property id="module.driver.timer.gtior.gtiob.compare_match_output_level" value="module.driver.timer.gtior.gtiob.compare_match_output_level.retain"/>
+      <property id="module.driver.timer.gtior.gtiob.count_stop_retain" value="module.driver.timer.gtior.gtiob.count_stop_retain.disabled"/>
+      <property id="module.driver.timer.gtior.custom_waveform_enable" value="module.driver.timer.gtior.custom_waveform_enable.disabled"/>
+      <property id="module.driver.timer.duty_cycle" value="50"/>
+      <property id="module.driver.timer.gtioca_output_enabled" value="module.driver.timer.gtioca_output_enabled.true"/>
+      <property id="module.driver.timer.gtioca_stop_level" value="module.driver.timer.gtioca_stop_level.pin_level_low"/>
+      <property id="module.driver.timer.gtiocb_output_enabled" value="module.driver.timer.gtiocb_output_enabled.false"/>
+      <property id="module.driver.timer.gtiocb_stop_level" value="module.driver.timer.gtiocb_stop_level.pin_level_low"/>
+      <property id="module.driver.timer.count_up_source" value=""/>
+      <property id="module.driver.timer.count_down_source" value=""/>
+      <property id="module.driver.timer.start_source" value=""/>
+      <property id="module.driver.timer.stop_source" value=""/>
+      <property id="module.driver.timer.clear_source" value=""/>
+      <property id="module.driver.timer.capture_a_source" value=""/>
+      <property id="module.driver.timer.capture_b_source" value=""/>
+      <property id="module.driver.timer.gtioca_filter" value="module.driver.timer.gtioc_filter.gtioc_filter_none"/>
+      <property id="module.driver.timer.gtiocb_filter" value="module.driver.timer.gtioc_filter.gtioc_filter_none"/>
+      <property id="module.driver.timer.p_callback" value="NULL"/>
+      <property id="module.driver.timer.ipl" value="_disabled"/>
+      <property id="module.driver.timer.capture_a_ipl" value="_disabled"/>
+      <property id="module.driver.timer.capture_b_ipl" value="_disabled"/>
+      <property id="module.driver.timer.trough_ipl" value="_disabled"/>
+      <property id="module.driver.timer.extra" value="module.driver.timer.extra.disabled"/>
+      <property id="module.driver.timer.poeg_link" value="module.driver.timer.poeg_link.poeg_link_poeg0"/>
+      <property id="module.driver.timer.output_disable" value=""/>
+      <property id="module.driver.timer.adc_trigger" value=""/>
+      <property id="module.driver.timer.dead_time_count_up" value="0"/>
+      <property id="module.driver.timer.dead_time_count_down" value="0"/>
+      <property id="module.driver.timer.adc_a_compare_match" value="0"/>
+      <property id="module.driver.timer.adc_b_compare_match" value="0"/>
+      <property id="module.driver.timer.interrupt_skip.source" value="module.driver.timer.interrupt_skip.source.none"/>
+      <property id="module.driver.timer.interrupt_skip.count" value="module.driver.timer.interrupt_skip.count.count_0"/>
+      <property id="module.driver.timer.interrupt_skip.adc" value="module.driver.timer.interrupt_skip.adc.none"/>
+      <property id="module.driver.timer.gtioca_disable_setting" value="module.driver.timer.gtioca_disable_setting.gtioc_disable_prohibited"/>
+      <property id="module.driver.timer.gtiocb_disable_setting" value="module.driver.timer.gtiocb_disable_setting.gtioc_disable_prohibited"/>
+    </module>
+    <module id="module.driver.i2c_on_iic_master.632213517">
+      <property id="module.driver.i2c_master.name" value="g_i2c_master1"/>
+      <property id="module.driver.i2c_master.channel" value="1"/>
+      <property id="module.driver.i2c_master.rate" value="module.driver.i2c_master.rate.rate_standard"/>
+      <property id="module.driver.i2c_master.rise_time_ns" value="120"/>
+      <property id="module.driver.i2c_master.fall_time_ns" value="120"/>
+      <property id="module.driver.i2c_master.duty" value="50"/>
+      <property id="module.driver.i2c_master.slave" value="0x29"/>
+      <property id="module.driver.i2c_master.addr_mode" value="module.driver.i2c_master.addr_mode.addr_mode_7bit"/>
+      <property id="module.driver.i2c_master.timeout_mode" value="module.driver.i2c_master.timeout_mode.short_mode"/>
+      <property id="module.driver.i2c_master.timeout_scl_low" value="module.driver.i2c_master.timeout_scl_low.enabled"/>
+      <property id="module.driver.i2c_master.p_callback" value="NULL"/>
+      <property id="module.driver.i2c_master.ipl" value="board.icu.common.irq.priority12"/>
+    </module>
     <context id="_hal.0">
       <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.driver.uart_on_sci_b_uart.1514241209"/>
+      <stack module="module.driver.timer_on_gpt.1278150442"/>
+      <stack module="module.driver.i2c_on_iic_master.632213517"/>
     </context>
     <config id="config.driver.ioport">
       <property id="config.driver.ioport.checking" value="config.driver.ioport.checking.system"/>
@@ -294,6 +366,16 @@
       <property id="config.driver.sci_b_uart.fifo_support" value="config.driver.sci_b_uart.fifo_support.enabled"/>
       <property id="config.driver.sci_b_uart.dtc_support" value="config.driver.sci_b_uart.dtc_support.disabled"/>
       <property id="config.driver.sci_b_uart.flow_control" value="config.driver.sci_b_uart.flow_control.disabled"/>
+    </config>
+    <config id="config.driver.iic_master">
+      <property id="config.driver.iic_master.param_checking_enable" value="config.driver.iic_master.param_checking_enable.bsp"/>
+      <property id="config.driver.iic_master.dtc_enable" value="config.driver.iic_master.dtc_enable.disabled"/>
+      <property id="config.driver.iic_master.addr_mode_10_bit_enable" value="config.driver.iic_master.addr_mode_10_bit_enable.disabled"/>
+    </config>
+    <config id="config.driver.gpt">
+      <property id="config.driver.gpt.param_checking_enable" value="config.driver.gpt.param_checking_enable.bsp"/>
+      <property id="config.driver.gpt.output_support_enable" value="config.driver.gpt.output_support_enable.enabled"/>
+      <property id="config.driver.gpt.write_protect_enable" value="config.driver.gpt.write_protect_enable.disabled"/>
     </config>
   </raModuleConfiguration>
   <raPinConfiguration>
@@ -499,8 +581,13 @@
       <configSetting altId="glcd.lcd_tcon1.p807" configurationId="glcd.lcd_tcon1"/>
       <configSetting altId="glcd.lcd_tcon3.p515" configurationId="glcd.lcd_tcon3"/>
       <configSetting altId="glcd.mode.custom.free" configurationId="glcd.mode"/>
+      <configSetting altId="gpt12.gtioc12a.p802" configurationId="gpt12.gtioc12a"/>
+      <configSetting altId="gpt12.mode.gtiocaorgtiocb.free" configurationId="gpt12.mode"/>
       <configSetting altId="gpt6.gtioc6a.pa11" configurationId="gpt6.gtioc6a"/>
       <configSetting altId="gpt6.mode.gtiocaorgtiocb.free" configurationId="gpt6.mode"/>
+      <configSetting altId="iic1.mode.enabled.a" configurationId="iic1.mode"/>
+      <configSetting altId="iic1.scl1.p512" configurationId="iic1.scl1"/>
+      <configSetting altId="iic1.sda1.p511" configurationId="iic1.sda1"/>
       <configSetting altId="irq12.irq12_dash_ds.p008" configurationId="irq12.irq12_dash_ds"/>
       <configSetting altId="irq12.mode.custom.free" configurationId="irq12.mode"/>
       <configSetting altId="irq13.irq13_dash_ds.p009" configurationId="irq13.irq13_dash_ds"/>
@@ -642,6 +729,12 @@
       <configSetting altId="p505.gpio_mode.gpio_mode_in" configurationId="p505.gpio_mode"/>
       <configSetting altId="p506.input" configurationId="p506"/>
       <configSetting altId="p506.gpio_mode.gpio_mode_in" configurationId="p506.gpio_mode"/>
+      <configSetting altId="p511.iic1.sda1" configurationId="p511"/>
+      <configSetting altId="p511.gpio_speed.gpio_speed_m" configurationId="p511.gpio_drivecapacity"/>
+      <configSetting altId="p511.gpio_mode.gpio_mode_peripheral" configurationId="p511.gpio_mode"/>
+      <configSetting altId="p512.iic1.scl1" configurationId="p512"/>
+      <configSetting altId="p512.gpio_speed.gpio_speed_m" configurationId="p512.gpio_drivecapacity"/>
+      <configSetting altId="p512.gpio_mode.gpio_mode_peripheral" configurationId="p512.gpio_mode"/>
       <configSetting altId="p515.glcd.lcd_tcon3" configurationId="p515"/>
       <configSetting altId="p515.gpio_mode.gpio_mode_peripheral" configurationId="p515.gpio_mode"/>
       <configSetting altId="p600.output.low" configurationId="p600"/>
@@ -723,6 +816,8 @@
       <configSetting altId="p715.glcd.lcd_data14" configurationId="p715"/>
       <configSetting altId="p715.gpio_speed.gpio_speed_m" configurationId="p715.gpio_drivecapacity"/>
       <configSetting altId="p715.gpio_mode.gpio_mode_peripheral" configurationId="p715.gpio_mode"/>
+      <configSetting altId="p802.gpt12.gtioc12a" configurationId="p802"/>
+      <configSetting altId="p802.gpio_mode.gpio_mode_peripheral" configurationId="p802.gpio_mode"/>
       <configSetting altId="p803.ospi.om_sio1" configurationId="p803"/>
       <configSetting altId="p803.gpio_mode.gpio_mode_peripheral" configurationId="p803.gpio_mode"/>
       <configSetting altId="p805.glcd.lcd_tcon0" configurationId="p805"/>
